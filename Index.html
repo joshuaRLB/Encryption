@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substitution Cipher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://e0.pxfuel.com/wallpapers/167/644/desktop-wallpaper-cyber-background-cyber-cyber-forensic-and-cyber-monday-cyber-green.jpg');
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        input, textarea, button, select {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Substitution Cipher</h1>
+        <form id="cipherForm">
+            <label for="operation">Choose Operation:</label>
+            <select id="operation">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select>
+            
+            <label for="message">Enter Message:</label>
+            <textarea id="message" rows="4" placeholder="Type your message here..." oninput="validateMessage()"></textarea>
+
+            <label for="key">Enter Key (5 letters):</label>
+            <input type="text" id="key" maxlength="5" pattern="[A-Za-z]{5}" placeholder="Enter a 5-letter key" oninput="validateKey()" required />
+
+            <button type="button" onclick="processMessage()">Process</button>
+
+            <h3>Result:</h3>
+            <textarea id="result" rows="4" readonly></textarea>
+        </form>
+    </div>
+
+    <script src="cipher.js"></script>
+</body>
+</html>
